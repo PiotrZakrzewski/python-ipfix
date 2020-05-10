@@ -25,8 +25,8 @@ rec = { "flowStartMilliseconds" : datetime.strptime("2020-05-10 14:00:00",
 msg.export_namedict(rec)
 
 b = msg.to_bytes()
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 4739        # The port used by the server
+HOST = '127.0.0.1'
+PORT = 4739
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
