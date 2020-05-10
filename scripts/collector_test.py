@@ -23,7 +23,7 @@ class CollectorDictHandler(socketserver.StreamRequestHandler):
 
         print ("connection from "+str(self.client_address))
         r = ipfix.reader.from_stream(self.rfile)
-        for rec in r.records_as_dict():
+        for rec in r.namedict_iterator():
             print("--- record %u in message %u from %s---" %
                   (reccount, r.msgcount, str(self.client_address)))
             reccount += 1
